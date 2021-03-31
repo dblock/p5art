@@ -1,6 +1,6 @@
 ## Sanguine Experiments
 
-![](shape.gif)
+![](shape.jpg)
 
 ### Run
 
