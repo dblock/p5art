@@ -1,11 +1,9 @@
-let sanguine: p5.Color;
 let c: p5.Renderer;
 let saved = false;
 
 function setup() {
   c = createCanvas(windowWidth, windowHeight);
   rectMode(CENTER).noFill().frameRate(30);
-  sanguine = color('#850505');
 }
 
 function windowResized() {
@@ -28,7 +26,7 @@ function shape() {
     -x*0.2, y*0.6
   );
 
-  stroke(sanguine);
+  stroke(0);
   let d = 1.5;
 
   push();
@@ -54,17 +52,18 @@ function shape() {
 
 function draw() {
   background(255);
-  fill(sanguine);
+  fill(0);
 
   let shortest = min(windowWidth, windowHeight);
   let ll = 20;
   let hh = 0.8;
   let vv = 1.6;
 
-  text("Разрез ушей, ворсистый мех", shortest/vv, shortest*hh);
-  text("Приметы кошки чистокровной:", shortest/vv, shortest*hh+ll);
-  text("Она имела бы успех", shortest/vv, shortest*hh+2*ll);
-  text("И без отличной родословной.", shortest/vv, shortest*hh+3*ll);
+  text("Через форточку в окошко", shortest/vv, shortest*hh);
+  text("К нам пришла чужая кошка.", shortest/vv, shortest*hh+ll);
+  text("Мы сказали: –", shortest/vv, shortest*hh+2*ll);
+  text("Здравствуй, кошка,", shortest/vv, shortest*hh+3*ll);
+  text("Поживи у нас немножко.", shortest/vv, shortest*hh+4*ll);
 
   scale(0.5);
   translate(shortest / 2, shortest);
