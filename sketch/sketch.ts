@@ -5,7 +5,7 @@ let lines = 10;
 function setup() {
   c = createCanvas(640, 640);
   rectMode(CENTER).noFill().frameRate(1/3);
-  sanguine = color('#850505');
+  sanguine = color('#000000');
   textFont("Impact", windowHeight / lines);
   textAlign(CENTER, CENTER);
   background(255);
@@ -25,7 +25,7 @@ function draw() {
   clear();
   translate(width/2-width/lines/3, height/lines/2);
   for (let i = 0; i < lines; i++) {
-    text(addSpace("ALARMED", 3), 0, 0);
+    text(addSpace("ARMED", 3), 0, 0);
     translate(0, height / lines);
   }
 }
