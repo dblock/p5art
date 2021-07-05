@@ -1,33 +1,28 @@
 let sanguine: p5.Color;
 let c: p5.Renderer;
-let lines = 10;
 
 function setup() {
   c = createCanvas(640, 640);
-  rectMode(CENTER).noFill().frameRate(1/3);
+  rectMode(CENTER).noFill().frameRate(1/2);
   sanguine = color('#000000');
-  textFont("Impact", windowHeight / lines);
+  textFont("Impact", windowHeight / 4);
   textAlign(CENTER, CENTER);
   background(255);
   fill(sanguine);
 }
 
 function addSpace(s: string, count: number) {
-  let result = "";
   for (let i = 0; i < count; i++) {
-    let index = random(0, s.length + 1);
-    result += s.substr(0, index) + " " + s.substr(index);
+    let index = random(0, s.length - 1);
+    s = s.substr(0, index) + " " + s.substr(index);
   } 
-  return result;
+  return s;
 }
 
 function draw() {
   clear();
-  translate(width/2-width/lines/3, height/lines/2);
-  for (let i = 0; i < lines; i++) {
-    text(addSpace("ARMED", 3), 0, 0);
-    translate(0, height / lines);
-  }
+  translate(width/2, height/2);
+  text(addSpace("ARMED", 2), 0, 0);
 }
 
 function windowResized() {
