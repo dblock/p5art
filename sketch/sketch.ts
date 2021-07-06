@@ -12,11 +12,15 @@ function setup() {
   fill(sanguine);
 }
 
-function addSpace(s: string, count: number) {
+function addSpace(s: string, spaces: number, count: number) {
   let result = "";
   for (let i = 0; i < count; i++) {
-    let index = random(0, s.length + 1);
-    result += s.substr(0, index) + " " + s.substr(index);
+    let t = s;
+    for (let j = 0; j < spaces; j++) {
+      let index = random(0, t.length + 1);
+      t = t.substr(0, index) + " " + t.substr(index);
+    }
+    result += t;
   } 
   return result;
 }
@@ -25,7 +29,7 @@ function draw() {
   clear();
   translate(width/2-width/lines/3, height/lines/2);
   for (let i = 0; i < lines; i++) {
-    text(addSpace("ARMED", 3), 0, 0);
+    text(addSpace("ARMED", 2, 3), 0, 0);
     translate(0, height / lines);
   }
 }
