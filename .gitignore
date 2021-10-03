@@ -3,4 +3,6 @@ node_modules/
 **/*.js
 **/*.js.map
 !build/build.js
+!assets/p5.min.js
+!assets/p5.sound.min.js
 .DS_Store 
